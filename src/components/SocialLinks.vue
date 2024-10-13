@@ -4,6 +4,7 @@ import type { Component } from 'vue'
 
 interface SocialLink {
     href: string
+    label: string
     icon: Component
 }
 
@@ -17,7 +18,7 @@ const props = defineProps<Props>()
 <template>
     <div class="flex gap-x-4">
         <Button v-for="link in links" :key="link.href" variant="outline" size="icon" as-Child>
-            <a :href="link.href">
+            <a :href="link.href" :aria-label="link.label">
                 <component :is="link.icon" :size="24" />
             </a>
         </Button>

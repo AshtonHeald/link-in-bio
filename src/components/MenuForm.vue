@@ -38,12 +38,14 @@ const form = useForm({
 
 const { toast } = useToast()
 
-const onSubmit = form.handleSubmit((values, { resetForm }) => {
-    const formRef = document.querySelector('form') as HTMLFormElement | null
+import { ref } from 'vue'
 
-    if (formRef) {
+const formRef = ref<HTMLFormElement | null>(null)
+
+const onSubmit = form.handleSubmit((values, { resetForm }) => {
+    if (formRef.value) {
         emailjs
-            .sendForm('contact_service', 'links_form', formRef, {
+            .sendForm('contact_service', 'links_form', formRef.value, {
                 publicKey: '8PhuMhkMRUrBunrkl'
             })
             .then(
@@ -54,7 +56,6 @@ const onSubmit = form.handleSubmit((values, { resetForm }) => {
                     resetForm()
                 },
                 (error) => {
-                    // add button to retry // https://www.shadcn-vue.com/docs/components/toast#destructive
                     toast({
                         variant: 'destructive',
                         title: 'Uh oh! Something went wrong.',
@@ -76,7 +77,7 @@ const onSubmit = form.handleSubmit((values, { resetForm }) => {
 
 <template>
     <p class="mb-3 text-sm font-semibold">Send me a message</p>
-    <form @submit="onSubmit" ref="form" class="space-y-4 pr-4">
+    <form @submit="onSubmit" ref="formRef" class="space-y-4 pr-4">
         <FormField v-slot="{ componentField }" name="name">
             <FormItem class="relative" v-auto-animate>
                 <FormControl>

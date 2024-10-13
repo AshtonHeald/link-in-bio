@@ -1,15 +1,14 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
+import ash from '/ash.webp'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ScrollArea } from '@/components/ui/scroll-area'
-import ThemeToggle from '@/components/ThemeToggle.vue'
-import ShareButton from './components/ShareButton.vue'
-import MainForm from '@/components/MenuForm.vue'
 import SocialLinks from '@/components/SocialLinks.vue'
 import MenuLinks from '@/components/MenuLinks.vue'
+import MainForm from '@/components/MenuForm.vue'
 
-import ash from '@/assets/ash.png'
 import {
     PhDevToLogo,
     PhGithubLogo,
@@ -26,16 +25,29 @@ import {
 } from '@phosphor-icons/vue'
 import { Toaster } from '@/components/ui/toast'
 
-//--------------------------------------------------------------------------
+const isDarkMode = ref(false)
+const isLoaded = ref(false)
+
+const updateColorScheme = () => {
+    isDarkMode.value = window.matchMedia('(prefers-color-scheme: dark)').matches
+    document.documentElement.classList.toggle('dark', isDarkMode.value)
+}
+
+updateColorScheme()
+
+onMounted(() => {
+    isLoaded.value = true
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateColorScheme)
+})
 
 const subHeading = 'Web Developer • Writer'
 
 const socialLinks = [
-    { href: 'https://x.com/ashtonheald', icon: PhXLogo },
-    { href: 'https://www.linkedin.com/in/ashtonheald/', icon: PhLinkedinLogo },
-    { href: 'https://dev.to/ashthedev', icon: PhDevToLogo },
-    { href: 'https://github.com/ashtonheald', icon: PhGithubLogo },
-    { href: 'https://buymeacoffee.com/ashtonheald', icon: PhHandHeart }
+    { href: 'https://x.com/ashtonheald', icon: PhXLogo, label: 'Visit my X profile' },
+    { href: 'https://www.linkedin.com/in/ashtonheald/', icon: PhLinkedinLogo, label: 'Visit my LinkedIn profile' },
+    { href: 'https://dev.to/ashthedev', icon: PhDevToLogo, label: 'Check out my DEV.to profile' },
+    { href: 'https://github.com/ashtonheald', icon: PhGithubLogo, label: 'Check out my GitHub profile' },
+    { href: 'https://buymeacoffee.com/ashtonheald', icon: PhHandHeart, label: 'Support me on Buy Me a Coffee' }
 ]
 const menuLinks = [
     { href: 'https://ashthe.dev/', label: 'Web Portfolio', icon: PhCode, disabled: false },
@@ -107,6 +119,8 @@ const showcaseLinks = [{ href: 'https://start.ashthe.dev/', label: 'Start Page',
                 </footer>
             </div>
         </div>
-        <Toaster />
+        <div class="absolute">
+            <Toaster />
+        </div>
     </div>
 </template>

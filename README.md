@@ -1,58 +1,38 @@
-# link-in-bio
+<div align="center">
+  <img src="public/ash-happy.webp" alt="ash-logo" width="200" height="auto" />
+  <h1>Link in bio</h1>
+  <h4>
+    <a href="https://ashtonheald.me/">View Demo</a>
+  </h4>
+</div>
 
-This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
+### Screenshots
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+<img src="public/Screenshot0.webp" alt="Lighthouse Scores" />
+  
+|<img src="public/Screenshot1.webp" alt="Landing Page" />|<img src="public/Screenshot2.webp" alt="Results Page" />|
+|:---:|:---:|
+|<img src="public/Screenshot3.webp" alt="Landing Page" />|<img src="public/Screenshot4.webp" alt="Results Page" />|
 
-## Type Support for `.vue` Imports in TS
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+### Description
+  <p>My personal link in bio, designed to showcase all the essential aspects of my digital presence.</p>
 
-## Customize configuration
+### Features
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+<dl>
+  <dt></dt>
+  <dd></dd>
+  <dt>Contact Form</dt>
+  <dd>Utilizes EmailJS library for form funcitonality</dd>
+</dl>
 
-## Project Setup
+### Tech Stack
 
-```sh
-bun install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-bun run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-bun run build
-```
-
-### Run End-to-End Tests with [Playwright](https://playwright.dev)
-
-```sh
-# Install browsers for the first run
-bunx playwright install
-
-# When testing on CI, must build the project first
-bun run build
-
-# Runs the end-to-end tests
-bun run test:e2e
-# Runs the tests only on Chromium
-bun run test:e2e -- --project=chromium
-# Runs the tests of a specific file
-bun run test:e2e -- tests/example.spec.ts
-# Runs the tests in debug mode
-bun run test:e2e -- --debug
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-bun run lint
-```
+| Client | Server |
+|--------|--------|
+| [Astro](https://react.dev)  | [Hostinger](https://www.hostinger.com/) |
+| [React](https://react.dev)  | [Namecheap](https://www.namecheap.com/) |
+| [TailwindCSS](https://tailwindcss.com/) | |
+| [EmailJs](https://www.emailjs.com/) | |

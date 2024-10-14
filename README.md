@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="public/ash-happy.webp" alt="ash-logo" width="200" height="auto" />
+  <img src="public/ash.webp" alt="ash-logo" width="200" height="auto" />
   <h1>Link in bio</h1>
   <h4>
     <a href="https://ashtonheald.me/">View Demo</a>
@@ -19,20 +19,7 @@
 ### Description
   <p>My personal link in bio, designed to showcase all the essential aspects of my digital presence.</p>
 
-### Features
+### Todo
+- Remove unused libraries
 
-<dl>
-  <dt></dt>
-  <dd></dd>
-  <dt>Contact Form</dt>
-  <dd>Utilizes EmailJS library for form funcitonality</dd>
-</dl>
 
-### Tech Stack
-
-| Client | Server |
-|--------|--------|
-| [Astro](https://react.dev)  | [Hostinger](https://www.hostinger.com/) |
-| [React](https://react.dev)  | [Namecheap](https://www.namecheap.com/) |
-| [TailwindCSS](https://tailwindcss.com/) | |
-| [EmailJs](https://www.emailjs.com/) | |
